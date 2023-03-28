@@ -3,9 +3,13 @@ const index = function(req, res, next) {
 }
 
 const msgSend = function(req, res, next){
-    res.status(200).send('message sent!');
-    console.log(req.body);
-}
+  res.send({
+    "status": 200,
+    "message": "your message was received!"
+  });
+
+  console.log(JSON.stringify(req.body));
+};
 
   module.exports = {
     index,
